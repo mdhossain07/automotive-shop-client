@@ -1,0 +1,31 @@
+[
+    {   "id": 1,
+        "brand_name": "Toyota",
+        "brand_image": "https://i.ibb.co/CHjGhYr/Toyota-New-Brand.webp"
+    },
+    {
+        "id": 2,
+        "brand_name": "BMW",
+        "brand_image": "https://i.ibb.co/3cZfS88/BMW-Brand.png"
+    },
+    {
+        "id": 3,
+        "brand_name": "Ford",
+        "brand_image": "https://i.ibb.co/VWpq7Lh/Ford-Brand.jpg"
+    },
+    {
+        "id": 4,
+        "brand_name": "Lamborghini",
+        "brand_image": "https://i.ibb.co/b1dpRZG/lamborghini-new-brand.webp"
+    },
+    {
+        "id": 5,
+        "brand_name": "Tesla",
+        "brand_image": "https://i.ibb.co/Pm6Yhpd/tesla-brand.jpg"
+    },
+    {
+        "id": 6,
+        "brand_name": "Mercedez Benz",
+        "brand_image": "https://i.ibb.co/F3JgR8j/Mercedez-Brand.webp"
+    }
+]

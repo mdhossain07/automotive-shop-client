@@ -1,7 +1,9 @@
+import CarBrands from "../Components/CarBrands";
+
 const Home = () => {
   return (
     <div>
-      <h2> Hello</h2>
+      <CarBrands />
     </div>
   );
 };

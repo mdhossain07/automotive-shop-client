@@ -10,10 +10,7 @@ const AddProducts = () => {
     const description = form.description.value;
     const rating = form.rating.value;
 
-    console.log(name, brand, price, type, photo, description, rating);
-
     const product = { name, brand, price, type, photo, description, rating };
-    console.log(product);
 
     fetch("http://localhost:5000/products/", {
       method: "POST",

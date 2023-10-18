@@ -31,7 +31,10 @@ const ProductsCard = ({ product }) => {
       <Link to={`/${brand.toLowerCase()}/${_id}`}>
         <button className="btn ">View Details</button>
       </Link>
-      <button className="btn ">Update Details</button>
+
+      <Link to={`/update-product/${_id}`}>
+        <button className="btn ">Update Details</button>
+      </Link>
     </div>
   );
 };

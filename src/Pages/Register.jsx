@@ -1,5 +1,6 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import useAuth from "../hooks/useAuth";
 
 const Register = () => {
   const { createUser, updateUserProfile } = useAuth();
@@ -35,10 +36,11 @@ const Register = () => {
     }
 
     createUser(email, password)
-      .then(() => {
+      .then((res) => {
         updateUserProfile(name, photo).then(() => {
           Swal.fire("Success!", "User created successfully!", "success");
           navigate("/");
+          console.log(res.user);
         });
       })
       .catch((err) => {

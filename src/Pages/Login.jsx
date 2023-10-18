@@ -1,5 +1,7 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import useAuth from "../hooks/useAuth";
+import googleIcon from "../assets/Google__G__Logo 1.svg";
 
 const Login = () => {
   const { signIn, googleLogin } = useAuth();
@@ -15,9 +17,10 @@ const Login = () => {
     e.target.reset();
 
     signIn(email, password)
-      .then(() => {
+      .then((res) => {
         Swal.fire("Success!", "Logged in successfully!", "success");
         navigate(location?.state ? location.state : "/");
+        console.log(res.user);
       })
 
       .catch((err) => {

@@ -1,13 +1,14 @@
 import { useLoaderData } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const ProductDetails = () => {
   const product = useLoaderData();
-  const { name, photo, price, description, rating, type } = product;
-  console.log(product);
-  const cart = { name, photo, price, description, rating, type };
+  const { _id, name, photo, price, description, rating, type } = product;
+  const cart = { _id, name, photo, price, description, rating, type };
 
   const handleCart = () => {
-    console.log("clicked....");
+    // console.log(cart._id);
+    // console.log("cart", id);
 
     fetch("http://localhost:5000/cart", {
       method: "POST",
@@ -19,7 +20,12 @@ const ProductDetails = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        alert("added to cart");
+
+        if (cart._id === _id) {
+          alert("product is already added");
+        } else {
+          Swal.fire("Done!", "Product is added to the cart!", "success");
+        }
       });
   };
   return (

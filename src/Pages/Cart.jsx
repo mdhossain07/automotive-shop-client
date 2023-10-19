@@ -2,7 +2,6 @@
 import { useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
-import { FaCircleXmark } from "react-icons/fa6";
 
 const Cart = () => {
   const loadedCart = useLoaderData();
@@ -11,7 +10,7 @@ const Cart = () => {
   return (
     <>
       <div>
-        <h2 className="text-3xl font-semibold text-center mt-10">My Cart</h2>
+        <h2 className="text-3xl font-semibold text-center">My Cart</h2>
       </div>
       <div>
         {carts.map((cart) => (
@@ -51,10 +50,12 @@ const CartItem = ({ cart, carts, setCarts }) => {
       <div>
         <h2 className="text-2xl font-semibold">{name}</h2>
         <p className="text-lg font-medium">${price}</p>
-        <FaCircleXmark
+        <button
           onClick={() => handleRemove(_id)}
-          className="text-[#DD3333] text-2xl cursor-pointer"
-        ></FaCircleXmark>
+          className="btn bg-[#DD3333] text-white cursor-pointer"
+        >
+          Remove
+        </button>
       </div>
     </div>
   );

@@ -2,6 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 import Swal from "sweetalert2";
 import useAuth from "../hooks/useAuth";
 import "../styles/Navbar.css";
+import logo from "../assets/Automotive Shop Logo.png";
 
 const Navbar = () => {
   const { user, logOut } = useAuth();
@@ -59,7 +60,7 @@ const Navbar = () => {
               {navLinks}
             </ul>
           </div>
-          <a className="btn btn-ghost normal-case text-xl">Automotive Shop</a>
+          <img className="w-[120px]" src={logo} alt="" />
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{navLinks}</ul>

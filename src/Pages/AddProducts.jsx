@@ -34,9 +34,7 @@ const AddProducts = () => {
   return (
     <div>
       <div className="w-full lg:w-1/2 mx-auto">
-        <h2 className="text-3xl font-semibold text-center mt-10">
-          Add New Product
-        </h2>
+        <h2 className="text-3xl font-semibold text-center">Add New Product</h2>
         <form className="mt-16" onSubmit={handleProduct}>
           <div className="flex justify-around gap-16">
             <div className="form-control w-full max-w-xs">

@@ -1,5 +1,12 @@
 /* eslint-disable react/prop-types */
 import { Link, useLoaderData, useParams } from "react-router-dom";
+import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
 
 const BrandProducts = () => {
   const { brand } = useParams();
@@ -10,11 +17,32 @@ const BrandProducts = () => {
   );
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-      {matchedProducts.map((product) => (
-        <ProductsCard key={product._id} product={product}></ProductsCard>
-      ))}
-    </div>
+    <>
+      <div>
+        <Swiper
+          // install Swiper modules
+          modules={[Navigation, Pagination, Scrollbar, A11y]}
+          spaceBetween={50}
+          slidesPerView={3}
+          navigation
+          pagination={{ clickable: true }}
+          scrollbar={{ draggable: true }}
+          onSwiper={(swiper) => console.log(swiper)}
+          onSlideChange={() => console.log("slide change")}
+        >
+          <SwiperSlide>Slide 1</SwiperSlide>
+          <SwiperSlide>Slide 2</SwiperSlide>
+          <SwiperSlide>Slide 3</SwiperSlide>
+          <SwiperSlide>Slide 4</SwiperSlide>
+          ...
+        </Swiper>
+      </div>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+        {matchedProducts.map((product) => (
+          <ProductsCard key={product._id} product={product}></ProductsCard>
+        ))}
+      </div>
+    </>
   );
 };
 

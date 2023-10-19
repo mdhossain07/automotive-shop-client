@@ -1,7 +1,10 @@
+import banner from "../assets/Blue Modern Car Sale Banner.png";
+import banner1 from "../assets/Red White Modern Car Rental Banner Landscape.png";
+
 const Banner = () => {
   return (
     <div>
-      <h2>This is banner</h2>
+      <img className="mt-10 lg:w-full h-[80vh]" src={banner1} alt="" />
     </div>
   );
 };

@@ -50,8 +50,8 @@ const Register = () => {
   };
   return (
     <div>
-      <div className="bg-base-200">
-        <div className="hero min-h-screen bg-base-200">
+      <div className="">
+        <div className="hero min-h-screen ">
           <div className="hero-content flex-col">
             <div className="card flex-shrink-0 md:w-[550px] h-[620px] shadow-2xl bg-base-100">
               <div className="text-center">

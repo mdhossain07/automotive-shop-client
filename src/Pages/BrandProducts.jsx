@@ -20,12 +20,13 @@ const BrandProducts = () => {
     (product) => product.brand.toLowerCase() === brand.toLowerCase()
   );
 
+  console.log(matchedProducts);
+
   return (
     <>
       <div>
         <Swiper
           className="mt-10"
-          // install Swiper modules
           modules={[Navigation]}
           spaceBetween={50}
           slidesPerView={1}
@@ -44,10 +45,19 @@ const BrandProducts = () => {
           </SwiperSlide>
         </Swiper>
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 justify-items-center mt-16">
-        {matchedProducts.map((product) => (
-          <ProductsCard key={product._id} product={product}></ProductsCard>
-        ))}
+
+      <div>
+        {matchedProducts.length > 0 ? (
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 justify-items-center mt-16">
+            {matchedProducts.map((product) => (
+              <ProductsCard key={product._id} product={product}></ProductsCard>
+            ))}
+          </div>
+        ) : (
+          <h2 className="text-4xl font-bold text-center mt-16">
+            No Products Available
+          </h2>
+        )}
       </div>
     </>
   );
@@ -56,10 +66,11 @@ const BrandProducts = () => {
 export default BrandProducts;
 
 const ProductsCard = ({ product }) => {
+  console.log(product);
   const { name, photo, price, brand, _id } = product;
 
   return (
-    <div className="shadow-xl p-3 rounded-xl space-y-2 lg:w-3/5 text-center">
+    <div className="shadow-xl p-3 rounded-xl space-y-2 lg:w-3/5 text-center bg-gray-200">
       <img className="h-[200px] w-[350px] mx-auto p-3" src={photo} alt="" />
       <h2 className="text-3xl font-semibold">{name}</h2>
       <p className="text-lg font-medium">${price}</p>

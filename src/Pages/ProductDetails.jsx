@@ -7,9 +7,6 @@ const ProductDetails = () => {
   const cart = { _id, name, photo, price, description, rating, type };
 
   const handleCart = () => {
-    // console.log(cart._id);
-    // console.log("cart", id);
-
     fetch("http://localhost:5000/cart", {
       method: "POST",
       headers: {
@@ -20,10 +17,7 @@ const ProductDetails = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-
-        if (cart._id === _id) {
-          alert("product is already added");
-        } else {
+        if (data.insertedId) {
           Swal.fire("Done!", "Product is added to the cart!", "success");
         }
       });

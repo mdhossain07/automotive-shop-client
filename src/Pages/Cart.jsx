@@ -32,15 +32,31 @@ const CartItem = ({ cart, carts, setCarts }) => {
   const { _id, name, price, photo } = cart;
 
   const handleRemove = (_id) => {
-    fetch(`http://localhost:5000/cart/${_id}`, {
-      method: "DELETE",
-    })
-      .then((res) => res.json())
-      .then(() => {
-        Swal.fire("Done!", "Product is removed from the cart!", "success");
-        const remaining = carts.filter((cart) => cart._id !== _id);
-        setCarts(remaining);
-      });
+    console.log("item", _id);
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/cart/${_id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            if (data.deletedCount > 0) {
+              Swal.fire("Deleted!", "Your item has been deleted.", "success");
+              const remaining = carts.filter((cart) => cart._id !== _id);
+              setCarts(remaining);
+            }
+          });
+      }
+    });
   };
   return (
     <div className="flex gap-10 mt-10 items-center">

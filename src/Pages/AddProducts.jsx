@@ -33,13 +33,15 @@ const AddProducts = () => {
 
   return (
     <div>
-      <h2>Add Products</h2>
       <div className="w-full lg:w-1/2 mx-auto">
-        <form onSubmit={handleProduct}>
+        <h2 className="text-3xl font-semibold text-center mt-10">
+          Add New Product
+        </h2>
+        <form className="mt-16" onSubmit={handleProduct}>
           <div className="flex justify-around gap-16">
             <div className="form-control w-full max-w-xs">
               <label className="label">
-                <span className="label-text">Product Name</span>
+                <span className="label-text font-medium">Product Name</span>
               </label>
               <input
                 type="text"
@@ -50,7 +52,7 @@ const AddProducts = () => {
             </div>
             <div className="form-control w-full max-w-xs">
               <label className="label">
-                <span className="label-text">Brand Name</span>
+                <span className="label-text font-medium">Brand Name</span>
               </label>
               <input
                 type="text"
@@ -63,7 +65,7 @@ const AddProducts = () => {
           <div className="flex justify-around gap-16">
             <div className="form-control w-full max-w-xs">
               <label className="label">
-                <span className="label-text">Product Price</span>
+                <span className="label-text font-medium">Product Price</span>
               </label>
               <input
                 type="text"
@@ -74,7 +76,7 @@ const AddProducts = () => {
             </div>
             <div className="form-control w-full max-w-xs">
               <label className="label">
-                <span className="label-text">Product Type</span>
+                <span className="label-text font-medium">Product Type</span>
               </label>
               <input
                 type="text"
@@ -87,7 +89,7 @@ const AddProducts = () => {
           <div className="flex justify-around gap-16">
             <div className="form-control w-full max-w-xs">
               <label className="label">
-                <span className="label-text">Product Image</span>
+                <span className="label-text font-medium">Product Image</span>
               </label>
               <input
                 type="text"
@@ -98,7 +100,9 @@ const AddProducts = () => {
             </div>
             <div className="form-control w-full max-w-xs">
               <label className="label">
-                <span className="label-text">Product Description</span>
+                <span className="label-text font-medium">
+                  Product Description
+                </span>
               </label>
               <input
                 type="text"
@@ -111,7 +115,7 @@ const AddProducts = () => {
           <div>
             <div className="form-control w-full max-w-xs">
               <label className="label">
-                <span className="label-text">Product Rating</span>
+                <span className="label-text font-medium">Product Rating</span>
               </label>
               <input
                 type="text"
@@ -122,8 +126,10 @@ const AddProducts = () => {
             </div>
           </div>
 
-          <div>
-            <button className="btn w-full">Add Product</button>
+          <div className="mt-10">
+            <button className="btn w-full bg-[#dd3333] text-white">
+              Add Product
+            </button>
           </div>
         </form>
       </div>

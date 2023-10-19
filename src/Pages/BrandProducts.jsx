@@ -37,7 +37,7 @@ const BrandProducts = () => {
           ...
         </Swiper>
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 justify-items-center">
         {matchedProducts.map((product) => (
           <ProductsCard key={product._id} product={product}></ProductsCard>
         ))}
@@ -52,7 +52,7 @@ const ProductsCard = ({ product }) => {
   const { name, photo, price, brand, _id } = product;
 
   return (
-    <div className="shadow-xl p-3 rounded-xl space-y-2 w-3/5 text-center">
+    <div className="shadow-xl p-3 rounded-xl space-y-2 lg:w-3/5 text-center">
       <img className="h-[200px] w-[350px] mx-auto p-3" src={photo} alt="" />
       <h2 className="text-3xl font-semibold">{name}</h2>
       <p className="text-lg font-medium">${price}</p>

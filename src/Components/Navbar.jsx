@@ -1,6 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
 import Swal from "sweetalert2";
 import useAuth from "../hooks/useAuth";
+import "../styles/Navbar.css";
 
 const Navbar = () => {
   const { user, logOut } = useAuth();
@@ -88,7 +89,7 @@ const Navbar = () => {
           </div>
         ) : (
           <div className="navbar-end">
-            <Link to="/login" className="btn">
+            <Link to="/login" className="btn bg-[#DD3333] text-white">
               Login
             </Link>
           </div>

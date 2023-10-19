@@ -109,7 +109,9 @@ const Register = () => {
                   />
                 </div>
                 <div className="form-control mt-6">
-                  <button className="btn btn-neutral">Register</button>
+                  <button className="btn bg-[#DD3333] text-white">
+                    Register
+                  </button>
                 </div>
                 <div className="text-center mt-3">
                   <p className=" text-sm font-medium">

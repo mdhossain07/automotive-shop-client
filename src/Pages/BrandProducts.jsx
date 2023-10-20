@@ -11,6 +11,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
+import useAuth from "../hooks/useAuth";
 
 const BrandProducts = () => {
   const { brand } = useParams();
@@ -24,7 +25,7 @@ const BrandProducts = () => {
     <>
       <div>
         <Swiper
-          className="mt-10"
+          className="mt-24 lg:mt-10"
           modules={[Navigation]}
           spaceBetween={50}
           slidesPerView={1}
@@ -62,10 +63,15 @@ const BrandProducts = () => {
 export default BrandProducts;
 
 const ProductsCard = ({ product }) => {
+  const { isDark } = useAuth();
   const { name, photo, price, brand, _id } = product;
 
   return (
-    <div className="shadow-xl p-6 rounded-xl space-y-4 lg:w-3/4 text-center bg-gray-200">
+    <div
+      className={`${
+        isDark && "bg-gray-800 text-white"
+      }shadow-xl p-6 rounded-xl space-y-4 lg:w-3/4 text-center bg-gray-200`}
+    >
       <img
         className="h-[250px] w-[700px] mx-auto rounded-lg"
         src={photo}
@@ -76,11 +82,13 @@ const ProductsCard = ({ product }) => {
 
       <div className="flex justify-center gap-10 ">
         <Link to={`/${brand.toLowerCase()}/${_id}`}>
-          <button className="btn bg-[#DD3333] text-white">View Details</button>
+          <button className="btn bg-[#DD3333] text-white border-none">
+            View Details
+          </button>
         </Link>
 
         <Link to={`/update-product/${_id}`}>
-          <button className="btn bg-[#DD3333] text-white">
+          <button className="btn bg-[#DD3333] text-white border-none">
             Update Details
           </button>
         </Link>

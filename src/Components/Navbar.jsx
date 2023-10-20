@@ -57,7 +57,9 @@ const Navbar = () => {
             </label>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+              className={`${
+                isDark && "bg-gray-800 text-white"
+              }menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52`}
             >
               {navLinks}
             </ul>
@@ -80,14 +82,16 @@ const Navbar = () => {
               </label>
               <ul
                 tabIndex={0}
-                className="z-[1] shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52"
+                className={`${
+                  isDark && "bg-gray-800 text-white"
+                }z-[1] shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52`}
               >
                 <li>
-                  <a>{user.displayName}</a>
+                  <NavLink>{user.displayName}</NavLink>
                 </li>
                 <button onClick={handleLogOut}>
                   <li>
-                    <a>Logout</a>
+                    <NavLink>Logout</NavLink>
                   </li>
                 </button>
               </ul>
@@ -95,7 +99,10 @@ const Navbar = () => {
           </div>
         ) : (
           <div className="navbar-end">
-            <Link to="/login" className="btn bg-[#DD3333] text-white">
+            <Link
+              to="/login"
+              className="btn border-none bg-[#DD3333] text-white"
+            >
               Login
             </Link>
           </div>

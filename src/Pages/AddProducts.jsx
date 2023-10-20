@@ -1,6 +1,8 @@
 import Swal from "sweetalert2";
+import useAuth from "../hooks/useAuth";
 
 const AddProducts = () => {
+  const { isDark } = useAuth();
   const handleProduct = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -42,7 +44,11 @@ const AddProducts = () => {
           <div className="flex justify-around gap-16">
             <div className="form-control w-full max-w-xs">
               <label className="label">
-                <span className="label-text font-medium">Product Name</span>
+                <span
+                  className={`${isDark && "text-white"} label-text font-medium`}
+                >
+                  Product Name
+                </span>
               </label>
               <input
                 type="text"
@@ -53,7 +59,11 @@ const AddProducts = () => {
             </div>
             <div className="form-control w-full max-w-xs">
               <label className="label">
-                <span className="label-text font-medium">Brand Name</span>
+                <span
+                  className={`${isDark && "text-white"} label-text font-medium`}
+                >
+                  Brand Name
+                </span>
               </label>
               <input
                 type="text"
@@ -66,7 +76,11 @@ const AddProducts = () => {
           <div className="flex justify-around gap-16">
             <div className="form-control w-full max-w-xs">
               <label className="label">
-                <span className="label-text font-medium">Product Price</span>
+                <span
+                  className={`${isDark && "text-white"} label-text font-medium`}
+                >
+                  Product Price
+                </span>
               </label>
               <input
                 type="text"
@@ -77,7 +91,11 @@ const AddProducts = () => {
             </div>
             <div className="form-control w-full max-w-xs">
               <label className="label">
-                <span className="label-text font-medium">Product Type</span>
+                <span
+                  className={`${isDark && "text-white"} label-text font-medium`}
+                >
+                  Product Type
+                </span>
               </label>
               <input
                 type="text"
@@ -90,7 +108,11 @@ const AddProducts = () => {
           <div className="flex justify-around gap-16">
             <div className="form-control w-full max-w-xs">
               <label className="label">
-                <span className="label-text font-medium">Product Image</span>
+                <span
+                  className={`${isDark && "text-white"} label-text font-medium`}
+                >
+                  Product Image
+                </span>
               </label>
               <input
                 type="text"
@@ -101,7 +123,9 @@ const AddProducts = () => {
             </div>
             <div className="form-control w-full max-w-xs">
               <label className="label">
-                <span className="label-text font-medium">
+                <span
+                  className={`${isDark && "text-white"} label-text font-medium`}
+                >
                   Product Description
                 </span>
               </label>
@@ -116,7 +140,11 @@ const AddProducts = () => {
           <div>
             <div className="form-control w-full max-w-xs">
               <label className="label">
-                <span className="label-text font-medium">Product Rating</span>
+                <span
+                  className={`${isDark && "text-white"} label-text font-medium`}
+                >
+                  Product Rating
+                </span>
               </label>
               <input
                 type="text"
@@ -128,7 +156,7 @@ const AddProducts = () => {
           </div>
 
           <div className="mt-10">
-            <button className="btn w-full bg-[#dd3333] text-white">
+            <button className="btn w-full bg-[#dd3333] text-white border-none">
               Add Product
             </button>
           </div>

@@ -8,7 +8,7 @@ const Cart = () => {
   const [carts, setCarts] = useState(loadedCart);
 
   return (
-    <>
+    <div className="h-[50vh]">
       <div>
         <h2 className="text-3xl font-semibold text-center">My Cart</h2>
       </div>
@@ -22,7 +22,7 @@ const Cart = () => {
           ></CartItem>
         ))}
       </div>
-    </>
+    </div>
   );
 };
 
@@ -64,14 +64,14 @@ const CartItem = ({ cart, carts, setCarts }) => {
   return (
     <div className="flex gap-10 mt-10 items-center">
       <div>
-        <img className="w-[300px] rounded-xl" src={photo} alt="" />
+        <img className="lg:w-[300px] rounded-xl" src={photo} alt="" />
       </div>
       <div className="space-y-2">
         <h2 className="text-2xl font-semibold">{name}</h2>
         <p className="text-lg font-medium">${price}</p>
         <button
           onClick={() => handleRemove(_id)}
-          className="btn bg-[#DD3333] text-white cursor-pointer"
+          className="btn bg-[#DD3333] text-white cursor-pointer border-none"
         >
           Remove
         </button>

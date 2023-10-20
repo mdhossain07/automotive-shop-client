@@ -41,7 +41,10 @@ const ProductDetails = () => {
         <p className="text-xl font-medium">Price: ${price}</p>
         <p className="text-xl font-medium">Rating: {rating}/5</p>
         <p className="font-medium">{description}</p>
-        <button onClick={handleCart} className="btn bg-[#DD3333] text-white">
+        <button
+          onClick={handleCart}
+          className="btn bg-[#DD3333] text-white border-none"
+        >
           Add To Cart
         </button>
       </div>

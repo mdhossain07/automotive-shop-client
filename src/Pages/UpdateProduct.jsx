@@ -1,8 +1,11 @@
 import { useLoaderData, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import useAuth from "../hooks/useAuth";
 
 const UpdateProduct = () => {
   const products = useLoaderData();
+
+  const { isDark } = useAuth();
   const { _id, name, brand, price, type, photo, rating } = products;
 
   const navigate = useNavigate();
@@ -48,7 +51,11 @@ const UpdateProduct = () => {
           <div className="flex justify-around gap-16">
             <div className="form-control w-full max-w-xs">
               <label className="label">
-                <span className="label-text">Product Name</span>
+                <span
+                  className={`${isDark && "text-white"} label-text font-medium`}
+                >
+                  Product Name
+                </span>
               </label>
               <input
                 type="text"
@@ -60,7 +67,11 @@ const UpdateProduct = () => {
             </div>
             <div className="form-control w-full max-w-xs">
               <label className="label">
-                <span className="label-text">Brand Name</span>
+                <span
+                  className={`${isDark && "text-white"} label-text font-medium`}
+                >
+                  Brand Name
+                </span>
               </label>
               <input
                 type="text"
@@ -74,7 +85,11 @@ const UpdateProduct = () => {
           <div className="flex justify-around gap-16">
             <div className="form-control w-full max-w-xs">
               <label className="label">
-                <span className="label-text">Product Price</span>
+                <span
+                  className={`${isDark && "text-white"} label-text font-medium`}
+                >
+                  Product Price
+                </span>
               </label>
               <input
                 type="text"
@@ -86,7 +101,11 @@ const UpdateProduct = () => {
             </div>
             <div className="form-control w-full max-w-xs">
               <label className="label">
-                <span className="label-text">Product Type</span>
+                <span
+                  className={`${isDark && "text-white"} label-text font-medium`}
+                >
+                  Product Type
+                </span>
               </label>
               <input
                 type="text"
@@ -100,7 +119,11 @@ const UpdateProduct = () => {
           <div className="flex justify-around gap-16">
             <div className="form-control w-full max-w-xs">
               <label className="label">
-                <span className="label-text">Product Image</span>
+                <span
+                  className={`${isDark && "text-white"} label-text font-medium`}
+                >
+                  Product Image
+                </span>
               </label>
               <input
                 type="text"
@@ -112,7 +135,11 @@ const UpdateProduct = () => {
             </div>
             <div className="form-control w-full max-w-xs">
               <label className="label">
-                <span className="label-text">Product Rating</span>
+                <span
+                  className={`${isDark && "text-white"} label-text font-medium`}
+                >
+                  Product Rating
+                </span>
               </label>
               <input
                 type="text"
@@ -126,7 +153,7 @@ const UpdateProduct = () => {
           <div></div>
 
           <div>
-            <button className="btn w-full bg-[#DD3333] text-white mt-10">
+            <button className="btn w-full bg-[#DD3333] text-white mt-10 border-none">
               Update Product
             </button>
           </div>

@@ -1,8 +1,14 @@
 import offerImg from "../assets/motorOIls.jpg";
+import useAuth from "../hooks/useAuth";
 
 const Offer = () => {
+  const { isDark } = useAuth();
   return (
-    <div className="flex justify-between items-center px-32 py-10 mt-32 bg-gray-200">
+    <div
+      className={`${
+        isDark && "bg-gray-800 text-white"
+      } flex flex-col lg:flex-row justify-between items-center px-32 py-10 mt-32 bg-gray-200 rounded-xl`}
+    >
       <div>
         <img src={offerImg} alt="" />
       </div>
@@ -15,7 +21,7 @@ const Offer = () => {
           Off
         </p>
         <div className="flex justify-center">
-          <button className="btn bg-[#DD3333] text-white mx-auto">
+          <button className="btn bg-[#DD3333] text-white mx-auto border-none">
             Start Buying
           </button>
         </div>

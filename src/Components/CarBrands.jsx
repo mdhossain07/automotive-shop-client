@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import useAuth from "../hooks/useAuth";
 
 const CarBrands = () => {
   const [brands, setBrands] = useState([]);
@@ -12,9 +13,9 @@ const CarBrands = () => {
   return (
     <div className="">
       <h2 className="text-4xl font-bold text-[#DD3333] text-center mt-16">
-        Car Brands
+        Our Featured Brands
       </h2>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-3">
         {brands.map((brand) => (
           <BrandCards key={brand.id} brand={brand}></BrandCards>
         ))}
@@ -26,22 +27,18 @@ const CarBrands = () => {
 export default CarBrands;
 
 const BrandCards = ({ brand }) => {
+  const { isDark } = useAuth();
   const { brand_name, brand_image } = brand;
   return (
     <Link to={`/brand-products/${brand_name.toLowerCase()}`}>
       <div className="mt-10">
-        <div className="flex flex-col lg:flex-row items-center p-3 shadow-xl lg:w-[650px] lg:h-[300px] rounded-lg bg-gray-200">
-          <div className="space-y-2">
-            <h2 className="text-4xl font-bold text-center">{brand_name}</h2>
-            <p className="text-lg text-center">
-              Designed by
-              <span className="text-[#DD3333] font-semibold"> New Desires</span>
-            </p>
-          </div>
-
-          <div>
-            <img className="w-[500px] h-[300px] p-5" src={brand_image} alt="" />
-          </div>
+        <div
+          className={`${
+            isDark && "bg-gray-800 text-white"
+          } bg-gray-200 space-y-2 rounded-xl shadow-xl p-5 lg:w-[400px] lg:h-[300px]`}
+        >
+          <img className="w-[200px] mx-auto" src={brand_image} alt="" />
+          <h2 className="text-4xl font-bold text-center">{brand_name}</h2>
         </div>
       </div>
     </Link>

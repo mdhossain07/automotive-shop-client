@@ -3,9 +3,10 @@ import Swal from "sweetalert2";
 import useAuth from "../hooks/useAuth";
 import "../styles/Navbar.css";
 import logo from "../assets/Automotive Shop Logo.png";
+import DarkModeToggle from "react-dark-mode-toggle";
 
 const Navbar = () => {
-  const { user, logOut } = useAuth();
+  const { user, logOut, isDark, setIsdark } = useAuth();
 
   const handleLogOut = () => {
     logOut()
@@ -16,18 +17,19 @@ const Navbar = () => {
         Swal.fire("Failed", err.message, "error");
       });
   };
+
   const navLinks = (
     <>
-      <li>
+      <li className="font-medium ">
         <NavLink to="/">Home</NavLink>
       </li>
-      <li>
+      <li className="font-medium">
         <NavLink to="/add-products">Add Product</NavLink>
       </li>
-      <li>
+      <li className="font-medium">
         <NavLink to="/cart">My Cart</NavLink>
       </li>
-      <li>
+      <li className="font-medium">
         <NavLink to="/login">Login</NavLink>
       </li>
     </>
@@ -64,6 +66,9 @@ const Navbar = () => {
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{navLinks}</ul>
+        </div>
+        <div>
+          <DarkModeToggle onChange={setIsdark} checked={isDark} size={50} />
         </div>
         {user ? (
           <div className="navbar-end">

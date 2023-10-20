@@ -7,13 +7,16 @@ const ProductDetails = () => {
   const cart = { _id, name, photo, price, description, rating, type };
 
   const handleCart = () => {
-    fetch("http://localhost:5000/cart", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(cart),
-    })
+    fetch(
+      "https://automotive-shop-server-9lnykxr8o-mdhossain07.vercel.app/cart",
+      {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(cart),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -23,14 +26,25 @@ const ProductDetails = () => {
       });
   };
   return (
-    <div>
-      <img src={photo} alt="" />
-      <h2>{name}</h2>
-      <p>{price}</p>
-      <p>{description}</p>
-      <button onClick={handleCart} className="btn ">
-        Add To Cart
-      </button>
+    <div className="flex flex-col lg:flex-row gap-10 items-center">
+      <div>
+        <img
+          className="h-[200px] lg:w-[600px] mx-auto rounded-xl"
+          src={photo}
+          alt=""
+        />
+      </div>
+
+      <div className="space-y-3">
+        <h2 className="text-4xl font-semibold">Model: {name}</h2>
+        <p className="text-xl font-medium">Type: {type}</p>
+        <p className="text-xl font-medium">Price: ${price}</p>
+        <p className="text-xl font-medium">Rating: {rating}/5</p>
+        <p className="font-medium">{description}</p>
+        <button onClick={handleCart} className="btn bg-[#DD3333] text-white">
+          Add To Cart
+        </button>
+      </div>
     </div>
   );
 };

@@ -36,16 +36,26 @@ const router = createBrowserRouter([
             <Cart />
           </PrivateRoute>
         ),
-        loader: () => fetch("http://localhost:5000/cart"),
+        loader: () =>
+          fetch(
+            "https://automotive-shop-server-9lnykxr8o-mdhossain07.vercel.app/cart"
+          ),
       },
       {
         path: "/add-products",
-        element: <AddProducts />,
+        element: (
+          <PrivateRoute>
+            <AddProducts />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/brand-products/:brand",
         element: <BrandProducts />,
-        loader: () => fetch("http://localhost:5000/products/"),
+        loader: () =>
+          fetch(
+            "https://automotive-shop-server-9lnykxr8o-mdhossain07.vercel.app/products"
+          ),
       },
 
       {
@@ -56,7 +66,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/products/${params.id}`),
+          fetch(
+            `https://automotive-shop-server-9lnykxr8o-mdhossain07.vercel.app/products/${params.id}`
+          ),
       },
       {
         path: "/update-product/:id",
@@ -66,7 +78,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/products/${params.id}`),
+          fetch(
+            `https://automotive-shop-server-9lnykxr8o-mdhossain07.vercel.app/products/${params.id}`
+          ),
       },
     ],
   },

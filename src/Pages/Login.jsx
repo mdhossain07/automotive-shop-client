@@ -4,7 +4,7 @@ import useAuth from "../hooks/useAuth";
 import googleIcon from "../assets/Google__G__Logo 1.svg";
 
 const Login = () => {
-  const { signIn, googleLogin } = useAuth();
+  const { signIn, googleLogin, isDark } = useAuth();
 
   const location = useLocation();
   const navigate = useNavigate();
@@ -22,7 +22,6 @@ const Login = () => {
         navigate(location?.state ? location.state : "/");
         console.log(res.user);
       })
-
       .catch((err) => {
         Swal.fire("Error!", err.message, "error");
       });
@@ -46,9 +45,13 @@ const Login = () => {
           <div className="hero-content flex-col">
             <div className="card flex-shrink-0 md:w-[550px] h-[420px] shadow-2xl bg-base-100">
               <div className="text-center">
-                <h1 className="text-2xl lg:text-3xl font-bold mt-10">
+                <h2
+                  className={`${
+                    isDark && "text-black"
+                  } text-2xl lg:text-3xl font-bold mt-10`}
+                >
                   Login your account
-                </h1>
+                </h2>
               </div>
               <form onSubmit={handleLogin} className="card-body">
                 <div className="form-control">

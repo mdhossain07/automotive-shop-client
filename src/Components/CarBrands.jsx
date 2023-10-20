@@ -30,17 +30,17 @@ const BrandCards = ({ brand }) => {
   return (
     <Link to={`/brand-products/${brand_name.toLowerCase()}`}>
       <div className="mt-10">
-        <div className="flex flex-col lg:flex-row items-center p-5 shadow-xl lg:w-[650px] lg:h-[300px] rounded-lg bg-gray-200">
+        <div className="flex flex-col lg:flex-row items-center p-3 shadow-xl lg:w-[650px] lg:h-[300px] rounded-lg bg-gray-200">
           <div className="space-y-2">
             <h2 className="text-4xl font-bold text-center">{brand_name}</h2>
             <p className="text-lg text-center">
-              Designed by{" "}
-              <span className="text-[#DD3333] font-semibold">New Desires</span>
+              Designed by
+              <span className="text-[#DD3333] font-semibold"> New Desires</span>
             </p>
           </div>
 
           <div>
-            <img className="w-[500px] h-[300px] p-6" src={brand_image} alt="" />
+            <img className="w-[500px] h-[300px] p-5" src={brand_image} alt="" />
           </div>
         </div>
       </div>

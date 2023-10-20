@@ -43,9 +43,12 @@ const CartItem = ({ cart, carts, setCarts }) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/cart/${_id}`, {
-          method: "DELETE",
-        })
+        fetch(
+          `https://automotive-shop-server-9lnykxr8o-mdhossain07.vercel.app/cart/${_id}`,
+          {
+            method: "DELETE",
+          }
+        )
           .then((res) => res.json())
           .then((data) => {
             console.log(data);
@@ -63,7 +66,7 @@ const CartItem = ({ cart, carts, setCarts }) => {
       <div>
         <img className="w-[300px] rounded-xl" src={photo} alt="" />
       </div>
-      <div>
+      <div className="space-y-2">
         <h2 className="text-2xl font-semibold">{name}</h2>
         <p className="text-lg font-medium">${price}</p>
         <button

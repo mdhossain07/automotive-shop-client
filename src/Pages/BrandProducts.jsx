@@ -20,8 +20,6 @@ const BrandProducts = () => {
     (product) => product.brand.toLowerCase() === brand.toLowerCase()
   );
 
-  console.log(matchedProducts);
-
   return (
     <>
       <div>
@@ -31,8 +29,6 @@ const BrandProducts = () => {
           spaceBetween={50}
           slidesPerView={1}
           navigation
-          onSwiper={(swiper) => console.log(swiper)}
-          onSlideChange={() => console.log("slide change")}
         >
           <SwiperSlide>
             <img className="w-full lg:h-[550px]" src={slider1} alt="" />
@@ -66,16 +62,19 @@ const BrandProducts = () => {
 export default BrandProducts;
 
 const ProductsCard = ({ product }) => {
-  console.log(product);
   const { name, photo, price, brand, _id } = product;
 
   return (
-    <div className="shadow-xl p-3 rounded-xl space-y-2 lg:w-3/5 text-center bg-gray-200">
-      <img className="h-[200px] w-[350px] mx-auto p-3" src={photo} alt="" />
+    <div className="shadow-xl p-6 rounded-xl space-y-4 lg:w-3/4 text-center bg-gray-200">
+      <img
+        className="h-[250px] w-[700px] mx-auto rounded-lg"
+        src={photo}
+        alt=""
+      />
       <h2 className="text-3xl font-semibold">{name}</h2>
       <p className="text-lg font-medium">${price}</p>
 
-      <div className="flex justify-center gap-10">
+      <div className="flex justify-center gap-10 ">
         <Link to={`/${brand.toLowerCase()}/${_id}`}>
           <button className="btn bg-[#DD3333] text-white">View Details</button>
         </Link>

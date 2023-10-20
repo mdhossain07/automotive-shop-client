@@ -18,15 +18,19 @@ const UpdateProduct = () => {
 
     const product = { name, brand, price, type, photo, rating };
 
-    fetch(`http://localhost:5000/products/${_id}`, {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(product),
-    })
+    fetch(
+      `https://automotive-shop-server-9lnykxr8o-mdhossain07.vercel.app/products/${_id}`,
+      {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(product),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
+        console.log(data);
         if (data.modifiedCount > 0) {
           Swal.fire("Done!", "Product is updated", "success");
           form.reset();
@@ -37,7 +41,10 @@ const UpdateProduct = () => {
   return (
     <div>
       <div className="w-full lg:w-1/2 mx-auto">
-        <form onSubmit={handleUpdate}>
+        <h2 className="text-3xl font-semibold text-center">
+          Upate Existing Product
+        </h2>
+        <form className="mt-16" onSubmit={handleUpdate}>
           <div className="flex justify-around gap-16">
             <div className="form-control w-full max-w-xs">
               <label className="label">
@@ -119,7 +126,9 @@ const UpdateProduct = () => {
           <div></div>
 
           <div>
-            <button className="btn w-full">Update Product</button>
+            <button className="btn w-full bg-[#DD3333] text-white mt-10">
+              Update Product
+            </button>
           </div>
         </form>
       </div>

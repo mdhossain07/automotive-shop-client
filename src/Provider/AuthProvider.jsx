@@ -15,6 +15,7 @@ export const AuthContext = createContext(null);
 const googleProvider = new GoogleAuthProvider();
 
 const AuthProvider = ({ children }) => {
+  const [isDark, setIsdark] = useState(false);
   const [user, setUser] = useState({});
   const [loading, setLoading] = useState(true);
 
@@ -45,6 +46,14 @@ const AuthProvider = ({ children }) => {
   };
 
   useEffect(() => {
+    if (isDark) {
+      document.body.classList.add("dark");
+    } else {
+      document.body.classList.remove("dark");
+    }
+  }, [isDark]);
+
+  useEffect(() => {
     const observer = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
       setLoading(false);
@@ -63,6 +72,8 @@ const AuthProvider = ({ children }) => {
     googleLogin,
     updateUserProfile,
     logOut,
+    isDark,
+    setIsdark,
   };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>

@@ -64,7 +64,7 @@ export default BrandProducts;
 
 const ProductsCard = ({ product }) => {
   const { isDark } = useAuth();
-  const { name, photo, price, brand, _id } = product;
+  const { name, photo, description, price, brand, type, rating, _id } = product;
 
   return (
     <div
@@ -78,7 +78,17 @@ const ProductsCard = ({ product }) => {
         alt=""
       />
       <h2 className="text-3xl font-semibold">{name}</h2>
-      <p className="text-lg font-medium">${price}</p>
+      <div className="flex justify-center gap-10">
+        <p className="text-lg font-medium">Brand: {brand}</p>
+        <p className="text-lg font-medium">Type: {type}</p>
+      </div>
+
+      <div className="flex justify-center gap-10">
+        <p className="text-lg font-medium">Rating: {rating}/5 </p>
+        <p className="text-lg font-medium">Price: ${price}</p>
+      </div>
+
+      <p className="text-lg font-medium">{description.slice(0, 30)}...</p>
 
       <div className="flex justify-center gap-10 ">
         <Link to={`/${brand.toLowerCase()}/${_id}`}>

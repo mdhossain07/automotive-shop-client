@@ -17,7 +17,8 @@ const Offer = () => {
         <p className="text-blue-600 font-semibold text-center">Special Offer</p>
         <h2 className="text-3xl font-semibold text-center">SHELL MOTOR OILS</h2>
         <p className="font-medium text-center">
-          Discount up to <span className="text-green-600 font-medium">30%</span>
+          Discount up to{" "}
+          <span className="text-green-600 font-medium"> 30% </span>
           Off
         </p>
         <div className="flex justify-center">

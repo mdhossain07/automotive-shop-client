@@ -12,7 +12,7 @@ const CarBrands = () => {
   }, []);
   return (
     <div className="">
-      <h2 className="text-4xl font-bold text-[#DD3333] text-center mt-16">
+      <h2 className="text-4xl font-bold text-center mt-16">
         Our Featured Brands
       </h2>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-3">

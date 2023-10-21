@@ -3,7 +3,7 @@ import Swal from "sweetalert2";
 import useAuth from "../hooks/useAuth";
 
 const Register = () => {
-  const { createUser, updateUserProfile } = useAuth();
+  const { createUser, updateUserProfile, isDark } = useAuth();
   const navigate = useNavigate();
 
   const handleRegister = (e) => {
@@ -53,7 +53,11 @@ const Register = () => {
       <div className="">
         <div className="hero min-h-screen ">
           <div className="hero-content flex-col">
-            <div className="card flex-shrink-0 md:w-[550px] h-[620px] shadow-2xl bg-base-100">
+            <div
+              className={`card flex-shrink-0 md:w-[550px] h-[620px] shadow-2xl ${
+                isDark ? "bg-gray-800" : "bg-base-100"
+              }`}
+            >
               <div className="text-center">
                 <h1 className="text-2xl lg:text-3xl font-bold mt-10">
                   Register your account
@@ -62,7 +66,13 @@ const Register = () => {
               <form onSubmit={handleRegister} className="card-body">
                 <div className="form-control">
                   <label className="label">
-                    <span className="label-text font-semibold">Your Name</span>
+                    <span
+                      className={`label-text font-semibold ${
+                        isDark && "text-white"
+                      }`}
+                    >
+                      Your Name
+                    </span>
                   </label>
                   <input
                     type="text"
@@ -74,7 +84,13 @@ const Register = () => {
                 </div>
                 <div className="form-control">
                   <label className="label">
-                    <span className="label-text font-semibold">Photo URL</span>
+                    <span
+                      className={`label-text font-semibold ${
+                        isDark && "text-white"
+                      }`}
+                    >
+                      Photo URL
+                    </span>
                   </label>
                   <input
                     type="text"
@@ -86,7 +102,13 @@ const Register = () => {
                 </div>
                 <div className="form-control">
                   <label className="label">
-                    <span className="label-text font-semibold">Email</span>
+                    <span
+                      className={`label-text font-semibold ${
+                        isDark && "text-white"
+                      }`}
+                    >
+                      Email
+                    </span>
                   </label>
                   <input
                     type="email"
@@ -98,7 +120,13 @@ const Register = () => {
                 </div>
                 <div className="form-control">
                   <label className="label">
-                    <span className="label-text font-semibold">Password</span>
+                    <span
+                      className={`label-text font-semibold ${
+                        isDark && "text-white"
+                      }`}
+                    >
+                      Password
+                    </span>
                   </label>
                   <input
                     type="password"
@@ -109,7 +137,7 @@ const Register = () => {
                   />
                 </div>
                 <div className="form-control mt-6">
-                  <button className="btn bg-[#DD3333] text-white">
+                  <button className="btn bg-[#DD3333] text-white border-none">
                     Register
                   </button>
                 </div>

@@ -43,11 +43,15 @@ const Login = () => {
       <div>
         <div className="hero min-h-[70vh]">
           <div className="hero-content flex-col">
-            <div className="card flex-shrink-0 md:w-[550px] h-[420px] shadow-2xl bg-base-100">
+            <div
+              className={`card flex-shrink-0 md:w-[550px] h-[420px] shadow-2xl ${
+                isDark ? "bg-gray-800" : "bg-base-100"
+              } `}
+            >
               <div className="text-center">
                 <h2
                   className={`${
-                    isDark && "text-black"
+                    isDark ? "text-white" : "text-black"
                   } text-2xl lg:text-3xl font-bold mt-10`}
                 >
                   Login your account
@@ -56,7 +60,13 @@ const Login = () => {
               <form onSubmit={handleLogin} className="card-body">
                 <div className="form-control">
                   <label className="label">
-                    <span className="label-text font-semibold">Email</span>
+                    <span
+                      className={`label-text font-semibold ${
+                        isDark && "text-white"
+                      }`}
+                    >
+                      Email
+                    </span>
                   </label>
                   <input
                     type="email"
@@ -68,7 +78,13 @@ const Login = () => {
                 </div>
                 <div className="form-control">
                   <label className="label">
-                    <span className="label-text font-semibold">Password</span>
+                    <span
+                      className={`label-text font-semibold ${
+                        isDark && "text-white"
+                      }`}
+                    >
+                      Password
+                    </span>
                   </label>
                   <input
                     type="password"
@@ -79,7 +95,9 @@ const Login = () => {
                   />
                 </div>
                 <div className="form-control mt-6">
-                  <button className="btn bg-[#DD3333] text-white">Login</button>
+                  <button className="btn bg-[#DD3333] text-white border-none">
+                    Login
+                  </button>
                 </div>
                 <div className="text-center mt-3">
                   <p className=" text-sm font-medium">

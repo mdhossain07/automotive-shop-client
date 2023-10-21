@@ -2,6 +2,7 @@ import Banner from "../Components/Banner";
 import CarBrands from "../Components/CarBrands";
 import Gallery from "../Components/Gallery";
 import Offer from "../Components/Offer";
+import Testimonials from "../Components/Testimonials";
 
 const Home = () => {
   return (
@@ -10,6 +11,7 @@ const Home = () => {
       <CarBrands />
       <Offer />
       <Gallery />
+      <Testimonials />
     </div>
   );
 };

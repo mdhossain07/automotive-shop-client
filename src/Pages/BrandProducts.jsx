@@ -2,6 +2,7 @@
 import { Link, useLoaderData, useParams } from "react-router-dom";
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+import ReactStars from "react-rating-stars-component";
 
 import slider1 from "../assets/Blue Modern Car Sale Banner.png";
 import slider2 from "../assets/Black And White Modern Car Sale Banner.png";
@@ -84,7 +85,12 @@ const ProductsCard = ({ product }) => {
       </div>
 
       <div className="flex justify-center gap-10">
-        <p className="text-lg font-medium">Rating: {rating}/5 </p>
+        <p className="text-lg font-medium">
+          Rating:
+          <span>
+            <ReactStars count={rating} size={24} color="#DD3333" />
+          </span>
+        </p>
         <p className="text-lg font-medium">Price: ${price}</p>
       </div>
 

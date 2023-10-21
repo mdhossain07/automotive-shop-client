@@ -13,9 +13,7 @@ const Gallery = () => {
   };
   return (
     <>
-      <h2 className="text-4xl text-[#DD3333] text-center font-bold my-16">
-        Gallery
-      </h2>
+      <h2 className="text-4xl text-center font-bold my-16">Car Gallery</h2>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 p-5">
         <img style={imgStyles} src={car1} alt="" />
         <img style={imgStyles} src={car2} alt="" />

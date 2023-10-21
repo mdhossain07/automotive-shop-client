@@ -2,34 +2,12 @@
 import { useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
+import useAuth from "../hooks/useAuth";
 
 const Cart = () => {
   const loadedCart = useLoaderData();
   const [carts, setCarts] = useState(loadedCart);
-
-  return (
-    <div className="h-[50vh]">
-      <div>
-        <h2 className="text-3xl font-semibold text-center">My Cart</h2>
-      </div>
-      <div>
-        {carts.map((cart) => (
-          <CartItem
-            key={cart._id}
-            cart={cart}
-            carts={carts}
-            setCarts={setCarts}
-          ></CartItem>
-        ))}
-      </div>
-    </div>
-  );
-};
-
-export default Cart;
-
-const CartItem = ({ cart, carts, setCarts }) => {
-  const { _id, name, price, photo } = cart;
+  const { isDark } = useAuth();
 
   const handleRemove = (_id) => {
     console.log("item", _id);
@@ -61,21 +39,57 @@ const CartItem = ({ cart, carts, setCarts }) => {
       }
     });
   };
+
   return (
-    <div className="flex gap-10 mt-10 items-center">
+    <div className="h-[50vh]">
       <div>
-        <img className="lg:w-[300px] rounded-xl" src={photo} alt="" />
+        <h2 className="text-3xl font-semibold text-center">My Cart</h2>
       </div>
-      <div className="space-y-2">
-        <h2 className="text-2xl font-semibold">{name}</h2>
-        <p className="text-lg font-medium">${price}</p>
-        <button
-          onClick={() => handleRemove(_id)}
-          className="btn bg-[#DD3333] text-white cursor-pointer border-none"
-        >
-          Remove
-        </button>
+
+      <div className="overflow-x-auto">
+        <table className="table">
+          <thead>
+            <tr className={`${isDark && "text-white"} 'text-black`}>
+              <th></th>
+              <th>Image</th>
+              <th>Name</th>
+              <th>Price</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {carts.map((cart, index) => (
+              <tr key={cart._id}>
+                <th>{index + 1}</th>
+                <td>
+                  <img
+                    className="w-full lg:w-[250px] rounded-xl"
+                    src={cart.photo}
+                    alt=""
+                  />
+                </td>
+                <td>
+                  <h2 className="lg:text-lg font-medium">{cart.name}</h2>
+                </td>
+                <td>
+                  <p className="lg:text-lg font-medium">${cart.price}</p>
+                </td>
+                <td>
+                  <button
+                    onClick={() => handleRemove(cart._id)}
+                    className="btn bg-[#DD3333] text-white border-none"
+                  >
+                    X
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
+      <div></div>
     </div>
   );
 };
+
+export default Cart;

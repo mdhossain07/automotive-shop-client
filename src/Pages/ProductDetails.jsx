@@ -1,5 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
+import ReactStars from "react-rating-stars-component";
 
 const ProductDetails = () => {
   const product = useLoaderData();
@@ -39,7 +40,12 @@ const ProductDetails = () => {
         <h2 className="text-4xl font-semibold">Model: {name}</h2>
         <p className="text-xl font-medium">Type: {type}</p>
         <p className="text-xl font-medium">Price: ${price}</p>
-        <p className="text-xl font-medium">Rating: {rating}/5</p>
+        <p className="text-xl font-medium">
+          <p className="text-lg font-medium">
+            Rating:
+            <ReactStars count={rating} size={24} color="#DD3333" />
+          </p>
+        </p>
         <p className="font-medium">{description}</p>
         <button
           onClick={handleCart}

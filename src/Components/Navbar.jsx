@@ -87,11 +87,11 @@ const Navbar = () => {
                 }z-[1] shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52`}
               >
                 <li>
-                  <NavLink>{user.displayName}</NavLink>
+                  <a>{user.displayName}</a>
                 </li>
                 <button onClick={handleLogOut}>
                   <li>
-                    <NavLink>Logout</NavLink>
+                    <a>Logout</a>
                   </li>
                 </button>
               </ul>

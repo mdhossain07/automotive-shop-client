@@ -43,7 +43,11 @@ const UpdateProduct = () => {
   };
   return (
     <div>
-      <div className="w-full lg:w-1/2 mx-auto">
+      <div
+        className={`w-full lg:w-1/2 mx-auto px-6 py-10 rounded-xl ${
+          isDark ? "bg-gray-800" : "bg-base-100"
+        }`}
+      >
         <h2 className="text-3xl font-semibold text-center">
           Upate Existing Product
         </h2>
@@ -60,7 +64,9 @@ const UpdateProduct = () => {
               <input
                 type="text"
                 placeholder="enter product name"
-                className="input input-bordered w-full max-w-xs"
+                className={`input input-bordered w-full max-w-xs ${
+                  isDark && "text-black"
+                }`}
                 name="name"
                 defaultValue={name}
               />
@@ -76,7 +82,9 @@ const UpdateProduct = () => {
               <input
                 type="text"
                 placeholder="enter brand name"
-                className="input input-bordered w-full max-w-xs"
+                className={`input input-bordered w-full max-w-xs ${
+                  isDark && "text-black"
+                }`}
                 name="brand"
                 defaultValue={brand}
               />
@@ -94,7 +102,9 @@ const UpdateProduct = () => {
               <input
                 type="text"
                 placeholder="enter product price"
-                className="input input-bordered w-full max-w-xs"
+                className={`input input-bordered w-full max-w-xs ${
+                  isDark && "text-black"
+                }`}
                 name="price"
                 defaultValue={price}
               />
@@ -110,7 +120,9 @@ const UpdateProduct = () => {
               <input
                 type="text"
                 placeholder="enter product type"
-                className="input input-bordered w-full max-w-xs"
+                className={`input input-bordered w-full max-w-xs ${
+                  isDark && "text-black"
+                }`}
                 name="type"
                 defaultValue={type}
               />
@@ -128,7 +140,9 @@ const UpdateProduct = () => {
               <input
                 type="text"
                 placeholder="enter product image"
-                className="input input-bordered w-full max-w-xs"
+                className={`input input-bordered w-full max-w-xs ${
+                  isDark && "text-black"
+                }`}
                 name="photo"
                 defaultValue={photo}
               />
@@ -145,7 +159,9 @@ const UpdateProduct = () => {
                 type="text"
                 placeholder="enter product rating"
                 name="rating"
-                className="input input-bordered w-full max-w-xs"
+                className={`input input-bordered w-full max-w-xs ${
+                  isDark && "text-black"
+                }`}
                 defaultValue={rating}
               />
             </div>

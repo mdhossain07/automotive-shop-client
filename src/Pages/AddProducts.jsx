@@ -38,7 +38,11 @@ const AddProducts = () => {
 
   return (
     <div>
-      <div className="w-full lg:w-1/2 mx-auto">
+      <div
+        className={`w-full lg:w-1/2 mx-auto px-6 py-10 rounded-xl ${
+          isDark ? "bg-gray-800" : "bg-base-100"
+        }`}
+      >
         <h2 className="text-3xl font-semibold text-center">Add New Product</h2>
         <form className="mt-16" onSubmit={handleProduct}>
           <div className="flex justify-around gap-16">
@@ -53,7 +57,9 @@ const AddProducts = () => {
               <input
                 type="text"
                 placeholder="enter product name"
-                className="input input-bordered w-full max-w-xs"
+                className={`input input-bordered w-full max-w-xs ${
+                  isDark && "text-black"
+                }`}
                 name="name"
               />
             </div>
@@ -68,7 +74,9 @@ const AddProducts = () => {
               <input
                 type="text"
                 placeholder="enter brand name"
-                className="input input-bordered w-full max-w-xs"
+                className={`input input-bordered w-full max-w-xs ${
+                  isDark && "text-black"
+                }`}
                 name="brand"
               />
             </div>
@@ -85,7 +93,9 @@ const AddProducts = () => {
               <input
                 type="text"
                 placeholder="enter product price"
-                className="input input-bordered w-full max-w-xs"
+                className={`input input-bordered w-full max-w-xs ${
+                  isDark && "text-black"
+                }`}
                 name="price"
               />
             </div>
@@ -100,7 +110,9 @@ const AddProducts = () => {
               <input
                 type="text"
                 placeholder="enter product type"
-                className="input input-bordered w-full max-w-xs"
+                className={`input input-bordered w-full max-w-xs ${
+                  isDark && "text-black"
+                }`}
                 name="type"
               />
             </div>
@@ -117,7 +129,9 @@ const AddProducts = () => {
               <input
                 type="text"
                 placeholder="enter product image"
-                className="input input-bordered w-full max-w-xs"
+                className={`input input-bordered w-full max-w-xs ${
+                  isDark && "text-black"
+                }`}
                 name="photo"
               />
             </div>
@@ -133,7 +147,9 @@ const AddProducts = () => {
                 type="text"
                 placeholder="enter product description"
                 name="description"
-                className="input input-bordered w-full max-w-xs"
+                className={`input input-bordered w-full max-w-xs ${
+                  isDark && "text-black"
+                }`}
               />
             </div>
           </div>
@@ -150,7 +166,9 @@ const AddProducts = () => {
                 type="text"
                 placeholder="enter product rating"
                 name="rating"
-                className="input input-bordered w-full max-w-xs"
+                className={`input input-bordered w-full max-w-xs ${
+                  isDark && "text-black"
+                }`}
               />
             </div>
           </div>

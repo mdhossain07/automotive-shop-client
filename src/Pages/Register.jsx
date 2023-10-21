@@ -77,7 +77,9 @@ const Register = () => {
                   <input
                     type="text"
                     placeholder="Enter your name"
-                    className="input bg-[#F3F3F3] text-xs"
+                    className={`input bg-[#F3F3F3] text-xs ${
+                      isDark && "text-black"
+                    }`}
                     name="name"
                     required
                   />
@@ -95,7 +97,9 @@ const Register = () => {
                   <input
                     type="text"
                     placeholder="Enter your photo url"
-                    className="input bg-[#F3F3F3] text-xs"
+                    className={`input bg-[#F3F3F3] text-xs ${
+                      isDark && "text-black"
+                    }`}
                     name="photo"
                     required
                   />
@@ -113,7 +117,9 @@ const Register = () => {
                   <input
                     type="email"
                     placeholder="Enter your email address"
-                    className="input bg-[#F3F3F3] text-xs"
+                    className={`input bg-[#F3F3F3] text-xs ${
+                      isDark && "text-black"
+                    }`}
                     name="email"
                     required
                   />
@@ -131,7 +137,9 @@ const Register = () => {
                   <input
                     type="password"
                     placeholder="Enter your password"
-                    className="input bg-[#F3F3F3] text-xs"
+                    className={`input bg-[#F3F3F3] text-xs ${
+                      isDark && "text-black"
+                    }`}
                     name="password"
                     required
                   />

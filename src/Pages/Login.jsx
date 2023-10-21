@@ -61,8 +61,8 @@ const Login = () => {
                 <div className="form-control">
                   <label className="label">
                     <span
-                      className={`label-text font-semibold ${
-                        isDark && "text-white"
+                      className={` font-semibold ${
+                        isDark ? "text-white" : "label-text"
                       }`}
                     >
                       Email
@@ -71,25 +71,23 @@ const Login = () => {
                   <input
                     type="email"
                     placeholder="Enter your email address"
-                    className="input bg-[#F3F3F3] text-xs"
+                    className={`input bg-[#F3F3F3] text-xs ${
+                      isDark && "text-black"
+                    }`}
                     name="email"
                     required
                   />
                 </div>
                 <div className="form-control">
                   <label className="label">
-                    <span
-                      className={`label-text font-semibold ${
-                        isDark && "text-white"
-                      }`}
-                    >
-                      Password
-                    </span>
+                    <span className="label-text font-semibold">Password</span>
                   </label>
                   <input
                     type="password"
                     placeholder="Enter your password"
-                    className="input bg-[#F3F3F3] text-xs"
+                    className={`input bg-[#F3F3F3] text-xs ${
+                      isDark && "text-black"
+                    }`}
                     name="password"
                     required
                   />
